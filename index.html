@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+  <style>
+    i {
+        padding-right: 5px;
+      }
+    </style>
+  <title>Calorie Tracker</title>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper  teal accent-4">
+      <div class="container">
+        <a href="#" class="brand-logo center">Trackcalorie</a>
+        <ul class="right">
+          <!-- <li><a href="#" class="clear-btn btn grey">Clear all</a></li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+
+  <div class="container">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Add Meal / Food Item</span>
+        <!-- switches -->
+        <div class="row">
+          <div class="col s4">
+            <div class="switch">
+              <label>
+                Brekfast
+                <input id="dick" type="checkbox" value="false">
+                <span class="lever"></span>
+              </label>
+            </div>
+          </div>
+          <div class="col s4">
+            <div class="switch">
+              <label>
+                Dinner
+                <input type="checkbox">
+                <span class="lever"></span>
+              </label>
+            </div>
+          </div>
+          <div class="col s4">
+            <div class="switch">
+              <label>
+                Supper
+                <input type="checkbox">
+                <span class="lever"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- form -->
+        <form class="col">
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input type="text" placeholder="Add Item" id="item-name">
+              <label for="item-name">Meal</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input type="number" placeholder="Add amount" id="item-weight">
+              <label for="item-weight">Amount [g]</label>
+            </div>
+            <!-- BTW -->
+            <div class="input-field col s12 m4">
+              <input type="number" placeholder="Add proteins" id="item-proteins">
+              <label for="item-proteins">Proteins [g]</label>
+            </div>
+            <div class="input-field col s12 m4">
+              <input type="number" placeholder="Add fat" id="item-fat">
+              <label for="item-fat">Fats [g]</label>
+            </div>
+            <div class="input-field col s12 m4">
+              <input type="number" placeholder="Add carbs" id="item-carbs">
+              <label for="item-carbs">Carbs [g]</label>
+            </div>
+            <button class="add-btn btn blue darken-3"><i class="fa fa-plus"></i>Add Meal</button>
+            <!-- <button class="update-btn btn orange darken-3"><i class="fa fa-pencil-square-o"></i>Update Meal</button>
+            <button class="delete-btn btn red"><i class="fa fa-remove"></i>Delete Meal</button> -->
+            <button class="back-btn btn grey pull-right"><i class="fa fa-chevron-circle-left"></i> Back</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Calories daily amount -->
+
+    <div class="row">
+      <h5 class="center-align">Total nutritional value</h5>
+      <div class="col s12">
+        <h6>Protein: 100</h6>
+        <div class="progress darken-3">
+          <div class="determinate blue" style="width: 110%"></div>
+        </div>
+      </div>
+      <div class="col s12">
+        <h6>Fat: 0</h6>
+        <div class="progress">
+          <div class="determinate orange" style="width: 70%"></div>
+        </div>
+      </div>
+      <div class="col s12">
+        <h6>Carb: 0</h6>
+        <div class="progress">
+
+          <div class="determinate red" style="width: 50%"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Daily nutritional value card -->
+        <div class="card">
+          <div class="card-content">
+            <h5 class="center-align">Daily nutritional value</span></h5>
+          </div>
+          <div class="card-tabs ">
+            <ul class="tabs tabs-fixed-width">
+              <li class="tab"><a class="active" href="#test4">BREKFAST</a></li>
+              <li class="tab"><a  href="#test5">DINNER</a></li>
+              <li class="tab"><a href="#test6">SUPPER</a></li>
+            </ul>
+          </div>
+          <div class="card-content ">
+            <!-- BREKFAST TAB -->
+            <div id="test4">
+              <div class="row">
+                <div class="col s12 m4">
+                  <h6 id="item-proteins-daily">Proteins: 0</h6>
+                  <div class="progress darken-3">
+                    <div id="daily-precent-value-proteins" class="determinate blue"></div>
+                  </div>
+                </div>
+                <div class="col s12 m4">
+                  <h6 id="item-fat-daily" >Fat: 0</h6>
+                  <div class="progress">
+                    <div id="daily-precent-value-fat" class="determinate orange" style="width: 70%"></div>
+                  </div>
+                </div>
+                <div class="col s12 m4">
+                  <h6 id="item-carbs-daily" >Carbs: 0</h6>
+                  <div class="progress">
+                    <div id="daily-precent-value-carbs" class="determinate red" style="width: 70%"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- table -->
+              <table>
+                  <thead>
+                    <tr>
+                      <th class="center-align">Name</th>
+                      <th class="center-align">Proteins</th>
+                      <th class="center-align">Fat</th>
+                      <th class="center-align">Carbs</th>
+                      <th class="center-align"></th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-brekfast">
+                    <tr>
+                      <td class="center-align"><strong>Eggs</strong></td>
+                      <td class="center-align">12</td>
+                      <td class="center-align">44</td>
+                      <td class="center-align">124</td>
+                      <td class="center-align">
+                        <a href="#" class="secondary-content">
+                          <i class="fa fa-pencil"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+            <!-- END BREKFAST TAB -->
+             <!-- DINNER TAB -->
+             <div id="test5">
+                <div class="row">
+                  <div class="col s12 m4">
+                    <h6>Protein: 0</h6>
+                    <div class="progress darken-3">
+                      <div class="determinate blue" style="width: 70%"></div>
+                    </div>
+                  </div>
+                  <div class="col s12 m4">
+                    <h6>Fat: 0</h6>
+                    <div class="progress">
+                      <div class="determinate orange" style="width: 70%"></div>
+                    </div>
+                  </div>
+                  <div class="col s12 m4">
+                    <h6>Carb: 0</h6>
+                    <div class="progress">
+                      <div class="determinate red" style="width: 70%"></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- table -->
+                <table>
+                    <thead>
+                      <tr>
+                        <th class="center-align">Name</th>
+                        <th class="center-align">Proteins</th>
+                        <th class="center-align">Fat</th>
+                        <th class="center-align">Carbs</th>
+                        <th class="center-align"></th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody id="test">
+                      <tr>
+                        <td class="center-align"><strong>Eggs</strong></td>
+                        <td class="center-align">12</td>
+                        <td class="center-align">44</td>
+                        <td class="center-align">124</td>
+                        <td class="center-align">
+                          <a href="#" class="secondary-content">
+                            <i class="fa fa-pencil"></i>
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+              <!-- END DINNER TAB -->
+
+             <!-- SUPPER TAB -->
+             <div id="test6">
+                <div class="row">
+                  <div class="col s12 m4">
+                    <h6>Protein: 0</h6>
+                    <div class="progress darken-3">
+                      <div class="determinate blue" style="width: 70%"></div>
+                    </div>
+                  </div>
+                  <div class="col s12 m4">
+                    <h6>Fat: 0</h6>
+                    <div class="progress">
+                      <div class="determinate orange" style="width: 70%"></div>
+                    </div>
+                  </div>
+                  <div class="col s12 m4">
+                    <h6>Carb: 0</h6>
+                    <div class="progress">
+                      <div class="determinate red" style="width: 70%"></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- table -->
+                <table>
+                    <thead>
+                      <tr>
+                        <th class="center-align">Name</th>
+                        <th class="center-align">Proteins</th>
+                        <th class="center-align">Fat</th>
+                        <th class="center-align">Carbs</th>
+                        <th class="center-align"></th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody id="test">
+                      <tr>
+                        <td class="center-align"><strong>Eggs</strong></td>
+                        <td class="center-align">12</td>
+                        <td class="center-align">44</td>
+                        <td class="center-align">124</td>
+                        <td class="center-align">
+                          <a href="#" class="secondary-content">
+                            <i class="fa fa-pencil"></i>
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+              <!-- END SUPPER TAB -->
+          </div>
+        </div>
+ </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="app.js"></script>
+  <script src="apptest.js"></script>
+</body>
+
+</html>
